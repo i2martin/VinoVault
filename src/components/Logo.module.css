@@ -1,0 +1,16 @@
+.logo {
+  height: 5.2rem;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+  vertical-align: middle;
+}
+
+.brandName {
+  font-size: 2rem;
+  padding-left: 1rem;
+  font-weight: 600;
+}
