@@ -1,7 +1,6 @@
 .app {
-  height: 100vh;
+  min-height: 100vh;
   overscroll-behavior-y: none;
   display: flex;
   position: relative;
-  height: calc(100vh + 1.7rem);
 }

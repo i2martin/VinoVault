@@ -1,0 +1,26 @@
+.container{
+    height: 60px;
+    width: 60px;
+    background-color: var(--color-brand--1);
+    display: flex;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    z-index: 999;
+}
+
+.container:hover{
+    filter:brightness(110%);
+    cursor: pointer;
+    transition: linear 0.1s;
+    transform: scale(110%);
+
+}
+.icon{
+    color: transparent;  
+    text-shadow: 0 0 0 var(--color-dark--2);
+    font-size: 3rem;
+}

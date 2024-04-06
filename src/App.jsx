@@ -14,8 +14,8 @@ function App() {
         <Route element={<AppLayout />} path="app">
           <Route element={<Vineyards />} path="vineyards"></Route>
           <Route element={<WineCellars />} path="wine_cellars"></Route>
-          <Route element={<Wines />} path="map"></Route>
-          <Route element={<Map />} path="wines"></Route>
+          <Route element={<Map />} path="map"></Route>
+          <Route element={<Wines />} path="wines"></Route>
         </Route>
       </Routes>
     </BrowserRouter>

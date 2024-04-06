@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Example",
+        "locationLatitude": 15,
+        "locationLongitude": 20,
+        "size": 10,
+        "sorts": ["Graševina", "Chardonnay"]
+    }
+
+]
