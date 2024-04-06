@@ -1,3 +1,6 @@
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+@import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap";
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +9,9 @@
 :root {
   --color-brand--1: #ffb545;
   --color-brand--2: #00c46a;
-
+  --color-brand--3: #b76e79;
+  --color-brand--4: #8b0000;
+  --color-brand--5: #640000;
   --color-dark--0: #242a2e;
   --color-dark--1: #2d3439;
   --color-dark--2: #42484d;

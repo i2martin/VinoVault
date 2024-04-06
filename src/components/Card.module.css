@@ -1,51 +1,67 @@
 .card {
-    color: var(--color-dark--0);
-    background-color: var(--color-light--1);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    transition: 0.3s;
-    width: 15vw;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 2rem 2rem 2rem 2rem;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
-    background-color: var(--color-light--3);
-    cursor: pointer;
-    transition: linear 0.1s;
-    transform: scale(105%);
-  }
-  
-  .container {
-    padding: 2px 16px;
-  }
+  color: var(--color-dark--0);
+  background-color: var(--color-light--1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  width: 15vw;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 2rem 2rem 2rem 2rem;
+}
 
-  .imgTop{
-    max-width: 15vw;
-  }
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  background-color: var(--color-light--3);
+  cursor: pointer;
+  transition: linear 0.1s;
+  transform: scale(105%);
+}
 
-  .spaceBetween{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.container {
+  padding: 2px 16px;
+}
 
-  .cardWine {
-    color: var(--color-dark--0);
-    background-color: var(--color-brand--1);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    transition: 0.3s;
-    width: 15vw;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 2rem 2rem 2rem 2rem;
-  }
-  
-  .cardWine:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
-    filter: brightness(110%);
-    cursor: pointer;
-    transition: linear 0.1s;
-    transform: scale(105%);
-  }
+.imgTop {
+  max-width: 15vw;
+}
+
+.spaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cardWine,
+.red,
+.rose {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  width: 15vw;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.cardWine {
+  color: var(--color-dark--0);
+  background-color: var(--color-brand--1);
+}
+
+.red {
+  color: var(--color-light--2);
+  background-color: var(--color-brand--5);
+}
+
+.rose {
+  color: var(--color-dark--0);
+  background-color: var(--color-brand--3);
+}
+
+.cardWine:hover,
+.red:hover,
+.rose:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  filter: brightness(110%);
+  cursor: pointer;
+  transition: linear 0.1s;
+  transform: scale(105%);
+}

@@ -16,7 +16,6 @@
   display: block;
   color: inherit;
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 2rem;
   font-weight: 700;
   padding: 1rem 2rem;
@@ -24,8 +23,7 @@
   margin-bottom: 2rem;
 }
 
-.nav a:hover
-{
+.nav a:hover {
   transition: linear 0.1s;
   transform: scale(105%);
   filter: brightness(120%);

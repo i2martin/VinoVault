@@ -1,23 +1,23 @@
 import { NavLink } from "react-router-dom";
 import styles from "./AppNav.module.css";
+import { Graph, Database, Wine, MapTrifold } from "phosphor-react";
 function AppNav() {
   return (
     <nav className={styles.nav}>
       <ul>
         <NavLink className={styles.navLink} to="vineyards">
-          Vineyards
+          <Graph /> Vineyards
         </NavLink>
         <NavLink className={styles.navLink} to="wine_cellars">
-          Wine cellars
+          <Database /> Wine cellars
         </NavLink>
         <NavLink className={styles.navLink} to="map">
-          View on map
+          <MapTrifold /> View on map
         </NavLink>
         <NavLink className={styles.navLink} to="wines">
-          Wines
+          <Wine /> Wines
         </NavLink>
       </ul>
-      
     </nav>
   );
 }
