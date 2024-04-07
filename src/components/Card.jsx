@@ -1,55 +1,59 @@
+/* eslint-disable react/prop-types */
 import styles from "./Card.module.css";
 
 //open weather data https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-// eslint-disable-next-line react/prop-types
-function Card({ cardType, wineType = "cardWine" }) {
-  if (cardType === "vineyard") {
+
+function Card({ props }) {
+  console.log(props);
+  if (props.cardType === "vineyard") {
     return (
       <div className={styles.card}>
         <img className={styles.imgTop} src="/vineyard.webp" alt="Vineyard" />
         <div className={styles.container}>
           <h4>
-            <b>Title</b>
+            <b>{props.name}</b>
           </h4>
           <p>Location:</p>
           <div className={styles.spaceBetween}>
-            <div>Lat: 50</div>
-            <div>Lng: 50</div>
+            <div>Lat: {Math.round(props.locationLatitude, 3)}</div>
+            <div>Lng: {Math.round(props.locationLongitude, 3)}</div>
           </div>
-          <p>Size: 20ha</p>
-          <p>Vines: Graševina, Chardonnay, Pino Bijeli</p>
+          <p>{props.size} ha</p>
+          <p></p>
         </div>
       </div>
     );
   }
-  if (cardType === "wineCellar") {
+  if (props.cardType === "storage") {
     return (
       <div className={styles.card}>
         <img className={styles.imgTop} src="/wine_cellar.webp" alt="Vineyard" />
         <div className={styles.container}>
           <h4>
-            <b>Title</b>
+            <b>{props.name}</b>
           </h4>
-          <p>Location:</p>
-          <div className={styles.spaceBetween}>
-            <div>Lat: 50</div>
-            <div>Lng: 50</div>
-          </div>
-          <p>Capacity: 100000 L</p>
+          <p>Capacity: {props.capacity} L</p>
+          <p>Alcohol: {props.alcohol}%</p>
+          <p>Acid: {props.acid} g/L</p>
+          <p>Free sulphur: {props.freeSulphur} mg/L</p>
         </div>
       </div>
     );
   }
-  if (cardType === "wine") {
+  if (props.cardType === "wine") {
     return (
-      <div className={styles[wineType]}>
+      <div className={styles[props.wineType]}>
         <img className={styles.imgTop} src="/chardonnay.jpg" alt="Chardonnay" />
         <div className={styles.container}>
           <h4>
-            <b>Chardonnay 2024</b>
+            <b>
+              {props.name}
+              {props.year}
+            </b>
           </h4>
-          <p>Location: X</p>
-          <p>Alcohol: 11%</p>
+          <p>Alcohol: {props.alcohol}%</p>
+          <p>Acid: {props.acid} g/L</p>
+          <p>Free sulphur: {props.freeSulphur} mg/L</p>
           <p>Price: 2€</p>
         </div>
       </div>

@@ -1,18 +1,32 @@
-import { useNavigate } from "react-router-dom";
+/* eslint-disable react/prop-types */
 import styles from "./Map.module.css";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap,
-  useMapEvents,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
+import Spinner from "./Spinner";
+import Message from "./Message";
 
 function Map() {
+  const [vineyards, setVineyards] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  useEffect(function () {
+    setError(false);
+    async function getWines() {
+      try {
+        setIsLoading(true);
+        const res = await fetch("http://localhost:8000/vineyards");
+        const data = await res.json();
+        setVineyards(data);
+      } catch (err) {
+        setError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    getWines();
+  }, []);
   const [mapPosition, setMapPosition] = useState([40, 40]);
   const {
     isLoading: isLoadingPosition,
@@ -28,6 +42,9 @@ function Map() {
     },
     [geolocationPosition]
   );
+  if (isLoading) return <Spinner />;
+  if (error) return <Message />;
+
   return (
     <div className={styles.mapContainer}>
       {geolocationPosition === null && (
@@ -45,13 +62,22 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={mapPosition}>
-          <Popup>
-            <span>Test</span>
-          </Popup>
-        </Marker>
+        {vineyards !== null
+          ? vineyards.map((vineyard) => (
+              <Marker
+                position={[
+                  vineyard.locationLatitude,
+                  vineyard.locationLongitude,
+                ]}
+                key={vineyard.id}
+              >
+                <Popup>
+                  <p>{vineyard.name}</p>
+                </Popup>
+              </Marker>
+            ))
+          : null}
         <ChangeCenter position={mapPosition} />
-        <DetectClick />
       </MapContainer>
     </div>
   );
@@ -64,10 +90,4 @@ function ChangeCenter({ position }) {
   return null;
 }
 
-function DetectClick() {
-  const navigate = useNavigate();
-  useMapEvents({
-    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
-  });
-}
 export default Map;

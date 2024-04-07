@@ -4,7 +4,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   width: 15vw;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin: 2rem 2rem 2rem 2rem;
 }
@@ -32,16 +32,18 @@
 }
 .cardWine,
 .red,
-.rose {
+.rose,
+.white {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   width: 15vw;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin: 2rem 2rem 2rem 2rem;
 }
 
-.cardWine {
+.cardWine,
+.white {
   color: var(--color-dark--0);
   background-color: var(--color-brand--1);
 }
@@ -58,7 +60,8 @@
 
 .cardWine:hover,
 .red:hover,
-.rose:hover {
+.rose:hover,
+.white:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
   filter: brightness(110%);
   cursor: pointer;
