@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AddButton from "./AddButton";
 import Card from "./Card";
 import styles from "./Vineyards.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
 function Vineyard() {
+  const navigate = useNavigate();
   const [vineyards, setVineyards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -28,7 +30,7 @@ function Vineyard() {
   if (error) return <Message />;
   return (
     <>
-      <AddButton />
+      <AddButton onClick={() => navigate("../add_vineyard")} />
       <div className={styles.container}>
         {vineyards.map((vineyard) => (
           <Card props={vineyard} key={vineyard.id} />

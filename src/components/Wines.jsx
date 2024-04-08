@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AddButton from "./AddButton";
 import Spinner from "./Spinner";
 import Message from "./Message";
 import Card from "./Card";
 import styles from "./Wines.module.css";
+import { Outlet } from "react-router-dom";
 
 function Wines() {
+  const navigate = useNavigate();
   const [wines, setWines] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -30,7 +33,8 @@ function Wines() {
   if (error) return <Message />;
   return (
     <>
-      <AddButton />
+      <Outlet />
+      <AddButton onClick={() => navigate("../add_wine")} />
       <div className={styles.container}>
         {wines.map((wine) => (
           <Card props={wine} key={wine.id} />

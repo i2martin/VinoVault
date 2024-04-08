@@ -8,8 +8,8 @@ function AppNav() {
         <NavLink className={styles.navLink} to="vineyards">
           <Graph /> Vineyards
         </NavLink>
-        <NavLink className={styles.navLink} to="wine_cellar">
-          <Database /> Wine cellar
+        <NavLink className={styles.navLink} to="wine_storage">
+          <Database /> Wine storage
         </NavLink>
         <NavLink className={styles.navLink} to="map">
           <MapTrifold /> View on map

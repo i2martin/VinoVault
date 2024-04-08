@@ -38,9 +38,36 @@
       "sort": "Rose",
       "cardType": "storage",
       "wineType": "rose"
+    },
+    {
+      "id": "5982",
+      "name": "Letina 4",
+      "alcohol": "11",
+      "acid": "1",
+      "freeSulphur": "1",
+      "capacity": "5000",
+      "filled": "2000",
+      "sort": "Graševina",
+      "wineType": "white",
+      "": "",
+      "cardType": "storage",
+      "sold": 0
+    },
+    {
+      "id": "17f8",
+      "name": "Letina5",
+      "alcohol": "11",
+      "acid": "1",
+      "freeSulphur": "1",
+      "capacity": "5000",
+      "filled": "2000",
+      "sort": "Cabernet Sauvignon",
+      "wineType": "red",
+      "": "",
+      "cardType": "storage",
+      "sold": 0
     }
   ],
-
   "vineyards": [
     {
       "id": 1,
@@ -48,7 +75,10 @@
       "size": 20,
       "locationLatitude": 15,
       "locationLongitude": 20,
-      "sorts": ["Graševina", "Pino Bijeli"],
+      "sorts": [
+        "Graševina",
+        "Pino Bijeli"
+      ],
       "cardType": "vineyard"
     },
     {
@@ -57,7 +87,10 @@
       "size": 20,
       "locationLatitude": 15,
       "locationLongitude": 20,
-      "sorts": ["Graševina", "Pino Bijeli"],
+      "sorts": [
+        "Graševina",
+        "Pino Bijeli"
+      ],
       "cardType": "vineyard"
     },
     {
@@ -66,7 +99,10 @@
       "size": 20,
       "locationLatitude": 15,
       "locationLongitude": 20,
-      "sorts": ["Cabernet Sauvignon", "Traminac"],
+      "sorts": [
+        "Cabernet Sauvignon",
+        "Traminac"
+      ],
       "cardType": "vineyard"
     }
   ],
@@ -106,6 +142,18 @@
       "total": 10000,
       "cardType": "wine",
       "wineType": "red"
+    },
+    {
+      "id": 4,
+      "name": "Graševina",
+      "year": 2019,
+      "alcohol": 11,
+      "acid": 1,
+      "freeSulphur": 1,
+      "sold": 0,
+      "total": 5000,
+      "cardType": "wine",
+      "wineType": "white"
     }
   ]
 }
