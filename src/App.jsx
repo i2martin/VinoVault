@@ -9,6 +9,7 @@ import Map from "./components/Map";
 import AddWine from "./components/AddWine";
 import AddStorage from "./components/AddStorage";
 import AddVineyard from "./components/AddVineyard";
+import ErrorPage from "./components/ErrorPage";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
           <Route element={<AddStorage />} path="add_storage"></Route>
           <Route element={<AddVineyard />} path="add_vineyard"></Route>
         </Route>
+        <Route element={<ErrorPage />} path="*"></Route>
       </Routes>
     </BrowserRouter>
   );

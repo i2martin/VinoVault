@@ -27,7 +27,14 @@ function Vineyard() {
     getWines();
   }, []);
   if (isLoading) return <Spinner />;
-  if (error) return <Message />;
+  if (error)
+    return (
+      <Message
+        message={
+          "There was an error accessing data! Did you forget to start the server(development mode)?"
+        }
+      />
+    );
   return (
     <>
       <AddButton onClick={() => navigate("../add_vineyard")} />
