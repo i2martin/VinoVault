@@ -1,51 +1,65 @@
-import Button from "./Button";
 import styles from "./AddVineyard.module.css";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+const inputs = [
+  "name",
+  "size",
+  "locationLatitude",
+  "locationLongitude",
+  "sorts",
+];
+const placeholders = [
+  "Vineyard name",
+  "Size",
+  "Latitude",
+  "Longitude",
+  "Vine sorts",
+];
 function AddVineyard() {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <main className={styles.login}>
-      <form className={styles.form}>
-        <div className={styles.row}>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="size">Size</label>
-          <input type="text" id="size" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="locationLatitude">Latitude</label>
-          <input type="text" id="locationLatitude" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="locationLongitude">Longitude</label>
-          <input type="text" id="locationLongitude" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="sorts">Vine sorts</label>
-          <input type="text" id="sorts" required />
-        </div>
-        <div>
-          <Button
-            type="primary"
-            onClick={(e) => {
-              e.preventDefault();
-              const data = {};
-              Array.from(e.target.form).map((inputField) => {
-                Object.assign(data, { [inputField.id]: inputField.value });
-              });
-              Object.assign(data, { cardType: "vineyard" });
-              fetch("http://localhost:8000/vineyards", {
-                method: "POST",
-                body: JSON.stringify(data),
-              });
-              navigate("../vineyards");
-            }}
-          >
-            Add
-          </Button>
-        </div>
+      <form
+        onSubmit={handleSubmit((data) => {
+          Object.assign(data, { cardType: "vineyard" });
+          console.log(JSON.stringify(data));
+          fetch("http://localhost:8000/vineyards", {
+            method: "POST",
+            body: JSON.stringify(data),
+          });
+          navigate("../vineyards");
+        })}
+        className={styles.form}
+      >
+        {inputs.map((input, id) => (
+          <div className={styles.row} key={id}>
+            <input
+              {...register(input, {
+                required: true,
+                minLength: 1,
+                maxLength: 30,
+              })}
+              aria-invalid={errors[input] ? "true" : "false"}
+              placeholder={placeholders[id]}
+            />
+            {errors[input] && errors[input].type === "required" && (
+              <span className="alert" role="alert">
+                This is required*
+              </span>
+            )}
+            {errors[input] && errors[input].type === "maxLength" && (
+              <span className="alert" role="alert">
+                Max length exceeded*
+              </span>
+            )}
+          </div>
+        ))}
+        <input type="submit" value="Add" />
       </form>
     </main>
   );

@@ -1,64 +1,70 @@
-import Button from "./Button";
 import styles from "./AddWine.module.css";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+const inputs = ["name", "year", "alcohol", "acid", "freeSulphur", "total"];
+const placeholders = [
+  "Wine name",
+  "Year",
+  "Alcohol",
+  "Acid",
+  "Free Sulphur",
+  "Total bottles",
+];
+
 function AddWine() {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <main className={styles.login}>
-      <form className={styles.form}>
-        <div className={styles.row}>
-          <label htmlFor="name">Wine name</label>
-          <input type="text" id="name" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="year">Year</label>
-          <input type="text" id="year" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="alcohol">Alcohol</label>
-          <input type="text" id="alcohol" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="acid">Acid</label>
-          <input type="text" id="acid" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="freeSulphur">Free sulphur</label>
-          <input type="text" id="freeSulphur" required />
-        </div>
-        <div className={styles.row}>
-          <label htmlFor="total">Total bottles</label>
-          <input type="text" id="total" required />
-        </div>
+      <form
+        onSubmit={handleSubmit((data) => {
+          Object.assign(data, { cardType: "wine" });
+          Object.assign(data, { sold: 0 });
+          console.log(JSON.stringify(data));
+          fetch("http://localhost:8000/wines", {
+            method: "POST",
+            body: JSON.stringify(data),
+          });
+          navigate("../wines");
+        })}
+        className={styles.form}
+      >
+        {inputs.map((input, id) => (
+          <div className={styles.row} key={id}>
+            <input
+              {...register(input, {
+                required: true,
+                minLength: 1,
+                maxLength: 30,
+              })}
+              aria-invalid={errors[input] ? "true" : "false"}
+              placeholder={placeholders[id]}
+            />
+            {errors[input] && errors[input].type === "required" && (
+              <span className="alert" role="alert">
+                This is required*
+              </span>
+            )}
+            {errors[input] && errors[input].type === "maxLength" && (
+              <span className="alert" role="alert">
+                Max length exceeded*
+              </span>
+            )}
+          </div>
+        ))}
         <div className={styles.row}>
           <label htmlFor="wineType">Type of wine</label>
-          <select name="wineType" id="wineType">
+          <select {...register("wineType", { required: true })} id="wineType">
             <option value="white">White</option>
             <option value="rose">Rose</option>
             <option value="red">Red</option>
           </select>
         </div>
-        <div>
-          <Button
-            type="primary"
-            onClick={(e) => {
-              e.preventDefault();
-              const data = {};
-              Array.from(e.target.form).map((inputField) => {
-                Object.assign(data, { [inputField.id]: inputField.value });
-              });
-              Object.assign(data, { cardType: "wine" });
-              Object.assign(data, { sold: 0 });
-              fetch("http://localhost:8000/wines", {
-                method: "POST",
-                body: JSON.stringify(data),
-              });
-              navigate("../wines");
-            }}
-          >
-            Add
-          </Button>
-        </div>
+        <input type="submit" value="Add" />
       </form>
     </main>
   );

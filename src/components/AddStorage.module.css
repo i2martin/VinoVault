@@ -19,6 +19,6 @@
   gap: 0.5rem;
 }
 
-.formBtn {
-  width: 100%;
+.alert {
+  color: var(--color-bottle--red) !important;
 }

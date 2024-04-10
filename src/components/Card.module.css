@@ -68,3 +68,15 @@
   transition: linear 0.1s;
   transform: scale(105%);
 }
+
+.filledOuter {
+  min-height: 1vh;
+  width: 100%;
+  background-color: black;
+  bottom: 0px;
+}
+.filledInner {
+  min-height: 1vh;
+  background-color: blue;
+  bottom: 0px;
+}

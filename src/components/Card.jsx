@@ -56,7 +56,7 @@ function Card({ props }) {
               ? "/universal-bottle-red.webp"
               : "/universal-bottle-rose.webp"
           }
-          alt="Chardonnay"
+          alt={props.wineType}
         />
         <div className={styles.container}>
           <h4>

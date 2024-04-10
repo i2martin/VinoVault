@@ -55,7 +55,7 @@
     },
     {
       "id": "17f8",
-      "name": "Letina5",
+      "name": "Letina 5",
       "alcohol": "11",
       "acid": "1",
       "freeSulphur": "1",
@@ -75,10 +75,7 @@
       "size": 20,
       "locationLatitude": 15,
       "locationLongitude": 20,
-      "sorts": [
-        "Graševina",
-        "Pino Bijeli"
-      ],
+      "sorts": ["Graševina", "Pino Bijeli"],
       "cardType": "vineyard"
     },
     {
@@ -87,10 +84,7 @@
       "size": 20,
       "locationLatitude": 15,
       "locationLongitude": 20,
-      "sorts": [
-        "Graševina",
-        "Pino Bijeli"
-      ],
+      "sorts": ["Graševina", "Pino Bijeli"],
       "cardType": "vineyard"
     },
     {
@@ -99,10 +93,7 @@
       "size": 20,
       "locationLatitude": 15,
       "locationLongitude": 20,
-      "sorts": [
-        "Cabernet Sauvignon",
-        "Traminac"
-      ],
+      "sorts": ["Cabernet Sauvignon", "Traminac"],
       "cardType": "vineyard"
     },
     {

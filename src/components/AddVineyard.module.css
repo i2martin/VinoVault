@@ -22,3 +22,7 @@
 .formBtn {
   width: 100%;
 }
+
+.alert {
+  color: var(--color-bottle--red) !important;
+}
