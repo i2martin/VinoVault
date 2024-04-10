@@ -1,7 +1,7 @@
 {
   "storage": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Letina 1",
       "year": 2019,
       "alcohol": 15,
@@ -14,7 +14,7 @@
       "wineType": "white"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Letina 2",
       "year": 2019,
       "alcohol": 15,
@@ -27,7 +27,7 @@
       "wineType": "white"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Letina 3",
       "year": 2021,
       "alcohol": 15,
@@ -70,7 +70,7 @@
   ],
   "vineyards": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Renovo",
       "size": 20,
       "locationLatitude": 15,
@@ -82,7 +82,7 @@
       "cardType": "vineyard"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Principovac",
       "size": 20,
       "locationLatitude": 15,
@@ -94,7 +94,7 @@
       "cardType": "vineyard"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Vukovo",
       "size": 20,
       "locationLatitude": 15,
@@ -104,11 +104,22 @@
         "Traminac"
       ],
       "cardType": "vineyard"
+    },
+    {
+      "id": "5605",
+      "name": "Renovo 2",
+      "size": "30",
+      "locationLatitude": "40",
+      "locationLongitude": "30",
+      "sorts": "Graševina, Pino Sivi, Cabernet Sauvignon",
+      "": "",
+      "cardType": "vineyard",
+      "sold": 0
     }
   ],
   "wines": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Graševina 1L",
       "year": 2019,
       "alcohol": 11,
@@ -120,7 +131,7 @@
       "wineType": "white"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rose 1L",
       "year": 2019,
       "alcohol": 12,
@@ -132,7 +143,7 @@
       "wineType": "rose"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cabernet Sauvignon 1L",
       "year": 2019,
       "alcohol": 13,
@@ -144,7 +155,7 @@
       "wineType": "red"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Graševina",
       "year": 2019,
       "alcohol": 11,

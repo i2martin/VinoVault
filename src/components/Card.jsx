@@ -26,7 +26,12 @@ function Card({ props }) {
   if (props.cardType === "storage") {
     return (
       <div className={styles.card}>
-        <img className={styles.imgTop} src="/wine_cellar.webp" alt="Vineyard" />
+        <img
+          className={styles.imgTop}
+          style={{ backgroundColor: "white" }}
+          src="/inox-tank.webp"
+          alt="Vineyard"
+        />
         <div className={styles.container}>
           <h4>
             <b>{props.name}</b>
@@ -42,7 +47,17 @@ function Card({ props }) {
   if (props.cardType === "wine") {
     return (
       <div className={styles[props.wineType]}>
-        <img className={styles.imgTop} src="/chardonnay.jpg" alt="Chardonnay" />
+        <img
+          className={styles.imgTop}
+          src={
+            props.wineType === "white"
+              ? "/universal-bottle-white.webp"
+              : props.wineType === "red"
+              ? "/universal-bottle-red.webp"
+              : "/universal-bottle-rose.webp"
+          }
+          alt="Chardonnay"
+        />
         <div className={styles.container}>
           <h4>
             <b>

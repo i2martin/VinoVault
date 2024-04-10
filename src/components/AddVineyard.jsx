@@ -36,7 +36,6 @@ function AddVineyard() {
                 Object.assign(data, { [inputField.id]: inputField.value });
               });
               Object.assign(data, { cardType: "vineyard" });
-              Object.assign(data, { sold: 0 });
               fetch("http://localhost:8000/vineyards", {
                 method: "POST",
                 body: JSON.stringify(data),

@@ -18,6 +18,9 @@
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: #d6dee0;
+  --color-bottle--white: #fdf5d9;
+  --color-bottle--rose: #faa99b;
+  --color-bottle--red: #b5050e;
 }
 
 html {
