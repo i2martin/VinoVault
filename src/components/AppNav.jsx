@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./AppNav.module.css";
-import { Graph, Database, Wine, MapTrifold } from "phosphor-react";
+import { Graph, Database, Wine, MapTrifold, SignOut } from "phosphor-react";
 function AppNav() {
   return (
     <nav className={styles.nav}>
@@ -16,6 +16,9 @@ function AppNav() {
         </NavLink>
         <NavLink className={styles.navLink} to="wines">
           <Wine /> Wines
+        </NavLink>
+        <NavLink className={styles.navLink} to="/">
+          <SignOut /> Log out
         </NavLink>
       </ul>
     </nav>

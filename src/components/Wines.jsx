@@ -44,7 +44,11 @@ function Wines() {
       <AddButton onClick={() => navigate("../add_wine")} />
       <div className={styles.container}>
         {wines.map((wine) => (
-          <Card props={wine} key={wine.id} />
+          <Card
+            props={wine}
+            key={wine.id}
+            onClick={() => navigate(`./${wine.id}`)}
+          />
         ))}
       </div>
     </>

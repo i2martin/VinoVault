@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 
 //open weather data https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
-function Card({ props }) {
+function Card({ props, onClick }) {
   if (props.cardType === "vineyard") {
     return (
       <div className={styles.card}>
@@ -46,7 +46,7 @@ function Card({ props }) {
   }
   if (props.cardType === "wine") {
     return (
-      <div className={styles[props.wineType]}>
+      <div className={styles[props.wineType]} onClick={onClick}>
         <img
           className={styles.imgTop}
           src={

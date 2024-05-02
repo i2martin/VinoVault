@@ -10,6 +10,7 @@ import AddWine from "./components/AddWine";
 import AddStorage from "./components/AddStorage";
 import AddVineyard from "./components/AddVineyard";
 import ErrorPage from "./components/ErrorPage";
+import Wine from "./components/Wine";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
           <Route element={<WineStorage />} path="wine_storage"></Route>
           <Route element={<Map />} path="map"></Route>
           <Route element={<Wines />} path="wines"></Route>
+          <Route element={<Wine />} path="wines/:id"></Route>
           <Route element={<AddWine />} path="add_wine"></Route>
           <Route element={<AddStorage />} path="add_storage"></Route>
           <Route element={<AddVineyard />} path="add_vineyard"></Route>

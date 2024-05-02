@@ -54,12 +54,12 @@ function AddStorage() {
               placeholder={placeholders[id]}
             />
             {errors[input] && errors[input].type === "required" && (
-              <span className="alert" role="alert">
+              <span className={styles.alert} role="alert">
                 This is required*
               </span>
             )}
             {errors[input] && errors[input].type === "maxLength" && (
-              <span className="alert" role="alert">
+              <span className={styles.alert} role="alert">
                 Max length exceeded*
               </span>
             )}

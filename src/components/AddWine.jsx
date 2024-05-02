@@ -45,7 +45,7 @@ function AddWine() {
               placeholder={placeholders[id]}
             />
             {errors[input] && errors[input].type === "required" && (
-              <span className="alert" role="alert">
+              <span className={styles.alert} role="alert">
                 This is required*
               </span>
             )}
